@@ -16,7 +16,7 @@ This tool crawls a specified blog URL, extracts metadata from the pages, and col
 
 1. Clone the repository:
    ```
-   git clone https://github.com/tom-sapletta-com/BlogCrawler.git
+   git clone https://github.com/yourusername/blog-crawler.git
    cd blog-crawler
    ```
 
@@ -39,11 +39,46 @@ Run the script directly:
 python crawler.py
 ```
 
-By default, the script will crawl the URL specified in the `blog_url` variable (currently set to "https://mendable.ai/blog").
+By default, the script will crawl "https://tom.sapletta.com/blog".
 
-### Customization
+### Command Line Arguments
 
-- Modify the `blog_url` variable to crawl a different blog
+You can specify URLs to crawl in several ways:
+
+1. Single URL:
+   ```
+   python crawler.py --url https://example.com/blog
+   ```
+
+2. Multiple URLs from a file (one URL per line):
+   ```
+   python crawler.py --file urls.txt
+   ```
+
+3. Extract URLs from a sitemap:
+   ```
+   python crawler.py --sitemap https://example.com/sitemap.xml
+   ```
+   
+   With filtering (only crawl URLs containing a specific string):
+   ```
+   python crawler.py --sitemap https://example.com/sitemap.xml --filter blog
+   ```
+
+4. Explicitly use the default URL:
+   ```
+   python crawler.py --default
+   ```
+
+### Command Line Options
+
+- `--url`: Specify a single blog URL to crawl
+- `--file`: Specify a file containing multiple URLs to crawl (one URL per line)
+- `--sitemap`: Specify a sitemap URL to extract URLs from
+- `--filter`: Filter URLs from sitemap to only include those containing this string
+- `--default`: Use the default URL (https://tom.sapletta.com/blog)
+
+**Note:** The `--url`, `--file`, and `--sitemap` options are mutually exclusive. If none is specified, the default URL will be used automatically.
 - Adjust the `params` dictionary to change crawling options:
   - `limit`: Maximum number of pages to crawl
   - `onlyMainContent`: Whether to extract only the main content of pages
@@ -64,8 +99,8 @@ By default, the script will crawl the URL specified in the `blog_url` variable (
 ```
 Collecting potential links from crawl_result:
 Collected 15 potential links:
-URL: https://mendable.ai/blog/post1, Title: Example Post 1
-URL: https://mendable.ai/blog/post2, Title: Example Post 2
+URL: https://tom.sapletta.com/blog/post1, Title: Example Post 1
+URL: https://tom.sapletta.com/blog/post2, Title: Example Post 2
 ...
 ```
 
@@ -87,4 +122,3 @@ params = {
 ## Error Handling
 
 The script checks if `crawl_result` is empty or None and provides appropriate feedback.
-
