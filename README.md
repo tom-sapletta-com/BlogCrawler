@@ -16,8 +16,8 @@ This tool crawls a specified blog URL, extracts metadata from the pages, and col
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/blog-crawler.git
-   cd blog-crawler
+   git clone https://github.com/yourusername/urls2markdown-crawler.git
+   cd urls2markdown-crawler
    ```
 
 2. Install the required dependencies:
