@@ -47,7 +47,7 @@ You can specify URLs to crawl in several ways:
 
 1. Single URL:
    ```
-   python crawler.py --url https://example.com/blog
+   python crawler.py --url https://tom.sapletta.com/blog
    ```
 
 2. Multiple URLs from a file (one URL per line):
@@ -57,12 +57,12 @@ You can specify URLs to crawl in several ways:
 
 3. Extract URLs from a sitemap:
    ```
-   python crawler.py --sitemap https://example.com/sitemap.xml
+   python crawler.py --sitemap https://tom.sapletta.com/sitemap.xml
    ```
    
    With filtering (only crawl URLs containing a specific string):
    ```
-   python crawler.py --sitemap https://example.com/sitemap.xml --filter blog
+   python crawler.py --sitemap https://tom.sapletta.com/sitemap.xml --filter blog
    ```
 
 4. Explicitly use the default URL:
